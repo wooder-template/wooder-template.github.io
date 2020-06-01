@@ -16,14 +16,14 @@ const reload = browserSync.reload;
 
 const path = {
   build: {
-    html: 'dist/',
+    html: './',
     js: 'dist/js/',
     css: 'dist/css/',
     img: 'dist/img/',
-    favicon: 'dist/',
+    favicon: './',
     fonts: 'dist/fonts/',
     assets: 'dist/vendors/',
-    sw: 'dist/'
+    sw: './'
   },
   src: {
     html: 'src/*.html',
@@ -48,7 +48,7 @@ const path = {
 
 const config = {
   server: {
-    baseDir: "./dist",
+    baseDir: "./",
   },
   open: 'external',
   port: 7000,
@@ -126,7 +126,7 @@ gulp.task('build', [
   'js:build',
   'style:build',
   'fonts:build',
-  'image:build',
+  // 'image:build',
   'favicon:build',
   // 'sw:build'
 ]);
