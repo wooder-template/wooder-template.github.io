@@ -7,7 +7,6 @@
 *.mp4
 *.sublime*
 node_modules/
-dist/
 npm-debug.*
 source/css/*.css
 Thumbs.db
