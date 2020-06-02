@@ -15,6 +15,7 @@
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <script async custom-element="amp-ima-video" src="https://cdn.ampproject.org/v0/amp-ima-video-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
     <style amp-custom>
     /* Add your styles here */
@@ -288,5 +289,20 @@
         <span class="t t-d">Powered by <a href="https://github.com/Stella-A/" target="_blank" rel="nofollow noopener">Stella</a></span>
       </footer>
     </div>
+
+    <amp-analytics type="gtag" data-credentials="include">
+      <script type="application/json">
+      {
+        "vars" : {
+          "gtag_id": "UA-168213888-1",
+          "config" : {
+            "UA-168213888-1": {
+              "groups": "default"
+            }
+          }
+        }
+      }
+      </script>
+    </amp-analytics>
   </body>
 </html>
