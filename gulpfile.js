@@ -92,13 +92,13 @@ gulp.task('js:build', function () {
 
 gulp.task('style:build', function () {
   gulp.src(path.src.style)
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(prefixer({
-      browsers: ['last 4 versions']
-    })) //Добавим вендорные префиксы
+    // .pipe(prefixer({
+    //   browsers: ['last 4 versions']
+    // })) //Добавим вендорные префиксы
     .pipe(cssmin()) //Сожмем
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.css)) //И в build
     .pipe(reload({stream: true}));
 });

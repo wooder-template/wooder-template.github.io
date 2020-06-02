@@ -17,10 +17,9 @@
     <script async custom-element="amp-ima-video" src="https://cdn.ampproject.org/v0/amp-ima-video-0.1.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
-    <style amp-custom>
-    /* Add your styles here */
-    </style>
+    <style amp-custom></style>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="stylesheet" href="dist/css/main.css">
 
     <link rel="canonical" href=".">
     <title>Wooder</title>
@@ -61,85 +60,87 @@
       //= template/sprite.html
     </div>
 
-     <div class="wrap">
-      <header>
+     <div class="w">
+      <header class="h">
         <button type="button" on="tap: sidebar1.toggle" tabindex="0" class="hamburger">
-          <span>☰</span>
+          <i>☰</i>
           <span>Menu</span>
         </button>
-        <nav>
-          <span class="l">W<span>OO</span>DER</span>
+        <nav class="h_i">
+          <span class="logo">W<span>OO</span>DER</span>
           <ul class="m">
             <li class="m_i"><a href="#">Home</a></li>
             <li class="m_i"><a href="#">Products</a></li>
             <li class="m_i"><a href="#">About</a></li>
           </ul>
         </nav>
-        <button class="inf" on="tap:info.open"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
-        <amp-lightbox class="mdl" id="info" layout="nodisplay">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor exercitationem illo impedit inventore iusto maiores nemo numquam omnis optio. A culpa doloremque et ipsam maiores nemo sint, vitae voluptate.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cumque dicta dolorum eius fuga itaque iusto laborum minus nemo, odit pariatur repudiandae suscipit vero. Ab adipisci facilis fugit non ut?</p>
-          <button on="tap:info.close">Good!</button>
-        </amp-lightbox>
-        <span class="l_c" aria-label="Select a language" tabindex="-1">
-          <span>EN</span>
-          <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></i>
-        </span>
-        <div class="l" role="list">
-          <a class="l_i" href="#" role="listitem">RU</a>
+        <div class="h_i">
+          <button class="inf" on="tap:info.open"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+          <span class="l_c" aria-label="Select a language" tabindex="-1">
+            <span>EN</span>
+            <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></i>
+          </span>
+          <div class="l" role="list">
+            <a class="l_i" href="#" role="listitem">RU</a>
+          </div>
         </div>
       </header>
       <amp-sidebar class="s" id="sidebar1" layout="nodisplay" side="left">
-        <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+        <button type="button" aria-label="close sidebar" on="tap:sidebar1.toggle" class="close-sidebar">✕</button>
         <ul class="s_l">
           <li class="s_i"><a class="s_l" href="#">Home</a></li>
           <li class="s_i"><a class="s_l" href="#">Products</a></li>
           <li class="s_i"><a class="s_l" href="#">About</a></li>
         </ul>
       </amp-sidebar>
+      <amp-lightbox class="mdl" id="info" layout="nodisplay">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor exercitationem illo impedit inventore iusto maiores nemo numquam omnis optio. A culpa doloremque et ipsam maiores nemo sint, vitae voluptate.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cumque dicta dolorum eius fuga itaque iusto laborum minus nemo, odit pariatur repudiandae suscipit vero. Ab adipisci facilis fugit non ut?</p>
+        <button on="tap:info.close">Good!</button>
+      </amp-lightbox>
 
       <main>
         <div class="csl">
-          <amp-carousel id="csl" type="slides" width="450" height="300" controls loop autoplay delay="3000">
+          <amp-carousel id="csl" type="slides" width="500" height="270" layout="responsive" controls loop autoplay delay="3000">
             <div class="csl_i">
-              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
-              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <amp-img class="csl_img csl_img-l" src="/dist/img/slide-01-l.jpg" width="450" height="300" layout="responsive"></amp-img>
+              <amp-img class="csl_img csl_img-r" src="/dist/img/slide-01-r.jpg" width="450" height="300" layout="responsive"></amp-img>
               <div class="csl_info">
                 <h1 class="csl_title">WOODER</h1>
-                <a class="btn btn--row" href="#">
+                <a class="btn btn--row btn--border" href="#">
                   <span>LEARN MORE</span>
                   <i class="i i--a"></i>
                 </a>
               </div>
             </div>
             <div class="csl_i">
-              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
-              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <amp-img class="csl_img csl_img-l" src="/dist/img/slide-01-l.jpg" width="450" height="300" layout="responsive"></amp-img>
+              <amp-img class="csl_img csl_img-r" src="/dist/img/slide-01-r.jpg" width="450" height="300" layout="responsive"></amp-img>
               <div class="csl_info">
                 <h1 class="csl_title">WOODER</h1>
-                <a class="btn btn--row" href="#">
+                <a class="btn btn--row btn--border" href="#">
                   <span>LEARN MORE</span>
                   <i class="i i--a"></i>
                 </a>
               </div>
             </div>
             <div class="csl_i">
-              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
-              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <amp-img class="csl_img csl_img-l" src="/dist/img/slide-01-l.jpg" width="450" height="300" layout="responsive"></amp-img>
+              <amp-img class="csl_img csl_img-r" src="/dist/img/slide-01-r.jpg" width="450" height="300" layout="responsive"></amp-img>
               <div class="csl_info">
                 <h1 class="csl_title">WOODER</h1>
-                <a class="btn btn--row" href="#">
+                <a class="btn btn--row btn--border" href="#">
                   <span>LEARN MORE</span>
                   <i class="i i--a"></i>
                 </a>
               </div>
             </div>
             <div class="csl_i">
-              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
-              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <amp-img class="csl_img csl_img-l" src="/dist/img/slide-01-l.jpg" width="450" height="300" layout="responsive"></amp-img>
+              <amp-img class="csl_img csl_img-r" src="/dist/img/slide-01-r.jpg" width="450" height="300" layout="responsive"></amp-img>
               <div class="csl_info">
                 <h1 class="csl_title">WOODER</h1>
-                <a class="btn btn--row" href="#">
+                <a class="btn btn--row btn--border" href="#">
                   <span>LEARN MORE</span>
                   <i class="i i--a"></i>
                 </a>
@@ -163,27 +164,27 @@
             <span class="c-d-l">F</span>
             <h2 class="title">Furniture</h2>
             <p>Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made of reclaimed barnwood</p>
-            <a href="#">
+            <a class="btn btn--row btn--decor" href="#">
               <span>Learn more</span>
               <i class="i i--a-r"></i>
             </a>
             <span class="c-c">01 <span class="t-g">.</span></span>
           </div>
           <div class="c-img">
-            <amp-img alt="Furniture preview" src="./dist/img/img-01.jpg" width="900" height="675" layout="responsive"></amp-img>
+            <amp-img class="img" alt="Furniture preview" src="./dist/img/img-01.jpg" width="616" height="397" layout="intrinsic"></amp-img>
             <span class="c-d-t">Furniture</span>
           </div>
         </div>
         <div class="c">
           <div class="c-img">
-            <amp-img alt="Decor preview" src="./dist/img/img-02.jpg" width="900" height="675" layout="responsive"></amp-img>
+            <amp-img class="img" alt="Decor preview" src="./dist/img/img-02.jpg" width="616" height="397" layout="intrinsic"></amp-img>
             <span class="c-d-t">Decor</span>
           </div>
           <div class="c-right">
             <span class="c-d-l">D</span>
             <h2 class="title">Decor</h2>
             <p>We make all types of wooden decor as per design given by Architect,Interior designer, contractor which is suitable your premises.</p>
-            <a href="#">
+            <a class="btn btn--row btn--decor" href="#">
               <span>Learn more</span>
               <i class="i i--a-r"></i>
             </a>
@@ -260,7 +261,7 @@
           <div class="c-left">
             <h2 class="title">we Do the design of any complexity</h2>
             <p>This is a team of professionals that make the furniture and wood décor high standard. Creating modern designs. Adhering to the global quality standards. And we are doing work with love.</p>
-            <a href="#">
+            <a class="btn btn--row btn--border" href="#">
               <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i>
               <span>Watch video</span>
             </a>
@@ -268,14 +269,14 @@
         </div>
         <div class="c">
           <div class="c-img">
-            <amp-img alt="About preview" src="./dist/img/img-03.jpg" width="900" height="675" layout="responsive"></amp-img>
+            <amp-img class="img" alt="About preview" src="./dist/img/img-03.jpg" width="589" height="401" layout="intrinsic"></amp-img>
             <span class="c-d-t">About</span>
           </div>
           <div class="c-right">
             <span class="c-d-l">A</span>
             <h2 class="title">About</h2>
             <p>We are a team of professionals in the wood processing and the creation of wooden furniture of the highest class</p>
-            <a href="#">
+            <a class="btn btn--row btn--decor" href="#">
               <span>Learn more</span>
               <i class="i i--a-r"></i>
             </a>
@@ -283,9 +284,9 @@
         </div>
       </main>
 
-      <footer>
+      <footer class="f">
         <span class="t t-d">&copy; 2020 WOODER</span>
-        <span class="l">W<span>OO</span>DER</span>
+        <span class="logo">W<span>OO</span>DER</span>
         <span class="t t-d">Powered by <a href="https://github.com/Stella-A/" target="_blank" rel="nofollow noopener">Stella</a></span>
       </footer>
     </div>
