@@ -16,7 +16,6 @@
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <script async custom-element="amp-ima-video" src="https://cdn.ampproject.org/v0/amp-ima-video-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
-<!--    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>-->
     <style amp-custom>
     /* Add your styles here */
     </style>
@@ -57,6 +56,49 @@
     </script>
   </head>
   <body>
+    <div style="display: none">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-info" viewBox="0 0 44.7 44.7">
+          <path d="M22.3,0C10,0,0,10,0,22.3c0,12.3,10,22.3,22.3,22.3c12.3,0,22.3-10,22.3-22.3C44.7,10,34.7,0,22.3,0L22.3,0z
+      		 M22.3,42.7C11.1,42.7,2,33.6,2,22.3C2,11.1,11.1,2,22.3,2c11.2,0,20.3,9.1,20.3,20.3C42.7,33.6,33.6,42.7,22.3,42.7L22.3,42.7z
+      		 M22.3,42.7"/>
+          <path d="M22.2,15.1c-0.8,0-1.5,0.7-1.5,1.5v17c0,0.8,0.7,1.5,1.5,1.5c0.8,0,1.5-0.7,1.5-1.5v-17
+            C23.7,15.7,23,15.1,22.2,15.1L22.2,15.1z M22.2,15.1"/>
+          <path d="M24.1,10.9c0,1-0.8,1.8-1.8,1.8c-1,0-1.8-0.8-1.8-1.8c0-1,0.8-1.8,1.8-1.8C23.3,9.1,24.1,9.9,24.1,10.9
+            L24.1,10.9z M24.1,10.9"/>
+        </symbol>
+        <symbol id="icon-mouse" viewBox="0 0 217.5 332.8">
+          <path d="M119.6,0H94.1C41.3,0,0,43,0,97.9v137c0,54.9,41.3,97.9,94.1,97.9h25.5c54,0,97.9-43.9,97.9-97.9v-137
+            C217.5,43.9,173.6,0,119.6,0L119.6,0z M107.8,51.3h2c3.1,0,5.6,2.5,5.6,5.6v39.9c0,3.1-2.5,5.6-5.6,5.6h-2c-3.1,0-5.6-2.5-5.6-5.6
+            V56.9C102.2,53.8,104.7,51.3,107.8,51.3L107.8,51.3z M204.7,234.9c0,46.9-38.2,85.1-85.1,85.1H94.1c-45.6,0-81.3-37.4-81.3-85.1
+            v-137c0-47.7,35.7-85.1,81.3-85.1h8.2v26.5c-7.5,2.3-12.9,9.3-12.9,17.6v39.9c0,8.2,5.4,15.2,12.9,17.6v32.9c0,3.5,2.9,6.4,6.4,6.4
+            c3.5,0,6.4-2.9,6.4-6.4v-32.9c7.6-2.3,13.1-9.3,13.1-17.6V56.9c0-8.3-5.5-15.3-13.1-17.6V12.8h4.6c46.9,0,85.1,38.2,85.1,85.1
+            V234.9z M204.7,234.9"/>
+        </symbol>
+        <symbol id="icon-play" viewBox="0 0 22.8 25">
+          <path d="M4,0.5C1.8-0.7,0,0.3,0,2.9v19c0,2.6,1.8,3.6,4,2.3l16.6-9.5c2.2-1.3,2.2-3.4,0-4.6L4,0.5z M4,0.5"/>
+        </symbol>
+        <symbol id="icon-player" viewBox="0 0 24 24">
+          <path d="M16,11.5l-5-3.6c-0.2-0.1-0.4-0.2-0.6-0.1C10.2,8,10,8.2,10,8.4v7.3c0,0.2,0.1,0.4,0.3,0.5c0.1,0,0.2,0.1,0.3,0.1
+            c0.1,0,0.2,0,0.4-0.1l5-3.6c0.2-0.1,0.3-0.3,0.3-0.5C16.2,11.8,16.1,11.7,16,11.5L16,11.5z M16,11.5"/>
+          <path d="M12,0C5.4,0,0,5.4,0,12c0,6.6,5.4,12,12,12c6.6,0,12-5.4,12-12C24,5.4,18.7,0,12,0L12,0z M12,22C6.5,22,2,17.6,2,12
+            C2,6.5,6.5,2,12,2c5.5,0,10,4.5,10,10C22,17.6,17.6,22,12,22L12,22z M12,22"/>
+        </symbol>
+        <symbol id="icon-share" viewBox="0 0 19.2 20.8">
+          <path d="M15.2,12.8c-1.4,0-2.7,0.7-3.4,1.8l-4.3-2.4C7.8,11.7,8,11.1,8,10.4C8,10,7.9,9.6,7.8,9.3l4.5-2.5
+            C13,7.5,14,8,15.2,8c2.2,0,4-1.8,4-4s-1.8-4-4-4c-2.2,0-4,1.8-4,4c0,0.4,0.1,0.8,0.2,1.1L6.9,7.7C6.2,6.9,5.2,6.4,4,6.4
+            c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c0.9,0,1.7-0.3,2.4-0.8l0,0l4.8,2.8c0,0.1,0,0.3,0,0.4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4
+            C19.2,14.6,17.4,12.8,15.2,12.8L15.2,12.8z M15.2,1.6c1.3,0,2.4,1.1,2.4,2.4c0,1.3-1.1,2.4-2.4,2.4c-1.3,0-2.4-1.1-2.4-2.4
+            C12.8,2.7,13.9,1.6,15.2,1.6L15.2,1.6z M4,12.8c-1.3,0-2.4-1.1-2.4-2.4C1.6,9.1,2.7,8,4,8c1.3,0,2.4,1.1,2.4,2.4
+            C6.4,11.7,5.3,12.8,4,12.8L4,12.8z M15.2,19.2c-1.3,0-2.4-1.1-2.4-2.4c0-1.3,1.1-2.4,2.4-2.4c1.3,0,2.4,1.1,2.4,2.4
+            C17.6,18.1,16.5,19.2,15.2,19.2L15.2,19.2z M15.2,19.2"/>
+        </symbol>
+        <symbol id="arrow-down" viewBox="0 0 6 4">
+          <path d="M1888,43l-3,4-3-4" transform="translate(-1882 -43)"/>
+        </symbol>
+      </svg>
+    </div>
+
      <div class="wrap">
       <header>
         <button type="button" on="tap: sidebar1.toggle" tabindex="0" class="hamburger">
@@ -71,7 +113,7 @@
             <li class="m_i"><a href="#">About</a></li>
           </ul>
         </nav>
-        <button class="inf" on="tap:info.open"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+        <button class="inf" on="tap:info.open"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
         <amp-lightbox class="mdl" id="info" layout="nodisplay">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor exercitationem illo impedit inventore iusto maiores nemo numquam omnis optio. A culpa doloremque et ipsam maiores nemo sint, vitae voluptate.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cumque dicta dolorum eius fuga itaque iusto laborum minus nemo, odit pariatur repudiandae suscipit vero. Ab adipisci facilis fugit non ut?</p>
@@ -79,7 +121,7 @@
         </amp-lightbox>
         <span class="l_c" aria-label="Select a language" tabindex="-1">
           <span>EN</span>
-          <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></i>
+          <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></i>
         </span>
         <div class="l" role="list">
           <a class="l_i" href="#" role="listitem">RU</a>
@@ -149,7 +191,7 @@
             <button class="csl-pv_i" on="tap:csl.goToSlide(index=3)"><span>04</span></button>
           </div>
           <button class="scr" type="button" on="tap:">
-            <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-mouse"></use></svg></i>
+            <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-mouse"></use></svg></i>
             <i class="i i--a-d"></i>
             <span>scroll</span>
           </button>
@@ -195,7 +237,7 @@
               <div class="c-advt_i">
                 <div class="c-advt_pv">
                   <amp-img alt="Innovative Design" src="./dist/img/video-01.png" width="200" height="200"></amp-img>
-                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i></button>
                   <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
                     <amp-ima-video id="myVideo3"
                       width="640"
@@ -214,7 +256,7 @@
               <div class="c-advt_i">
                 <div class="c-advt_pv">
                   <amp-img alt="High-level Skills" src="./dist/img/video-02.png" width="200" height="200"></amp-img>
-                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i></button>
                   <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
                     <amp-ima-video id="myVideo3"
                       width="640"
@@ -233,7 +275,7 @@
               <div class="c-advt_i">
                 <div class="c-advt_pv">
                   <amp-img alt="Quality Products" src="./dist/img/video-03.png" width="200" height="200"></amp-img>
-                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i></button>
                   <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
                     <amp-ima-video id="myVideo3"
                       width="640"
@@ -257,7 +299,7 @@
             <h2 class="title">we Do the design of any complexity</h2>
             <p>This is a team of professionals that make the furniture and wood décor high standard. Creating modern designs. Adhering to the global quality standards. And we are doing work with love.</p>
             <a href="#">
-              <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i>
+              <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i>
               <span>Watch video</span>
             </a>
           </div>

@@ -16,7 +16,6 @@
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <script async custom-element="amp-ima-video" src="https://cdn.ampproject.org/v0/amp-ima-video-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
-<!--    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>-->
     <style amp-custom>
     /* Add your styles here */
     </style>
@@ -57,6 +56,10 @@
     </script>
   </head>
   <body>
+    <div style="display: none">
+      //= template/sprite.html
+    </div>
+
      <div class="wrap">
       <header>
         <button type="button" on="tap: sidebar1.toggle" tabindex="0" class="hamburger">
@@ -71,7 +74,7 @@
             <li class="m_i"><a href="#">About</a></li>
           </ul>
         </nav>
-        <button class="inf" on="tap:info.open"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+        <button class="inf" on="tap:info.open"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
         <amp-lightbox class="mdl" id="info" layout="nodisplay">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor exercitationem illo impedit inventore iusto maiores nemo numquam omnis optio. A culpa doloremque et ipsam maiores nemo sint, vitae voluptate.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cumque dicta dolorum eius fuga itaque iusto laborum minus nemo, odit pariatur repudiandae suscipit vero. Ab adipisci facilis fugit non ut?</p>
@@ -79,7 +82,7 @@
         </amp-lightbox>
         <span class="l_c" aria-label="Select a language" tabindex="-1">
           <span>EN</span>
-          <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></i>
+          <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></i>
         </span>
         <div class="l" role="list">
           <a class="l_i" href="#" role="listitem">RU</a>
@@ -149,7 +152,7 @@
             <button class="csl-pv_i" on="tap:csl.goToSlide(index=3)"><span>04</span></button>
           </div>
           <button class="scr" type="button" on="tap:">
-            <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-mouse"></use></svg></i>
+            <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-mouse"></use></svg></i>
             <i class="i i--a-d"></i>
             <span>scroll</span>
           </button>
@@ -195,7 +198,7 @@
               <div class="c-advt_i">
                 <div class="c-advt_pv">
                   <amp-img alt="Innovative Design" src="./dist/img/video-01.png" width="200" height="200"></amp-img>
-                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i></button>
                   <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
                     <amp-ima-video id="myVideo3"
                       width="640"
@@ -214,7 +217,7 @@
               <div class="c-advt_i">
                 <div class="c-advt_pv">
                   <amp-img alt="High-level Skills" src="./dist/img/video-02.png" width="200" height="200"></amp-img>
-                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i></button>
                   <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
                     <amp-ima-video id="myVideo3"
                       width="640"
@@ -233,7 +236,7 @@
               <div class="c-advt_i">
                 <div class="c-advt_pv">
                   <amp-img alt="Quality Products" src="./dist/img/video-03.png" width="200" height="200"></amp-img>
-                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i></button>
                   <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
                     <amp-ima-video id="myVideo3"
                       width="640"
@@ -257,7 +260,7 @@
             <h2 class="title">we Do the design of any complexity</h2>
             <p>This is a team of professionals that make the furniture and wood décor high standard. Creating modern designs. Adhering to the global quality standards. And we are doing work with love.</p>
             <a href="#">
-              <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i>
+              <i class="i"><svg width="20" height="20"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i>
               <span>Watch video</span>
             </a>
           </div>
