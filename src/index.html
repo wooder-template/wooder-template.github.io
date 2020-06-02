@@ -2,8 +2,8 @@
 <html ⚡ lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <meta name="description" content="This is the AMP Boilerplate.">
+    <meta name="viewport" c="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="description" c="This is the AMP Boilerplate.">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-experiment-0.1.js">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0/amp-dynamic-css-classes-0.1.js">
@@ -12,6 +12,9 @@
     <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
     <script async custom-element="amp-dynamic-css-classes" src="https://cdn.ampproject.org/v0/amp-dynamic-css-classes-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-csl" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script async custom-element="amp-ima-video" src="https://cdn.ampproject.org/v0/amp-ima-video-0.1.js"></script>
     <!-- Import other AMP Extensions here -->
 <!--    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>-->
     <style amp-custom>
@@ -54,39 +57,233 @@
     </script>
   </head>
   <body>
-    <div class="wrap">
+     <div class="wrap">
       <header>
-        <div role="button" on="tap: sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+        <button type="button" on="tap: sidebar1.toggle" tabindex="0" class="hamburger">
+          <span>☰</span>
+          <span>Menu</span>
+        </button>
+        <nav>
+          <span class="l">W<span>OO</span>DER</span>
+          <ul class="m">
+            <li class="m_i"><a href="#">Home</a></li>
+            <li class="m_i"><a href="#">Products</a></li>
+            <li class="m_i"><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <button class="inf" on="tap:info.open"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+        <amp-lightbox class="mdl" id="info" layout="nodisplay">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid dolor exercitationem illo impedit inventore iusto maiores nemo numquam omnis optio. A culpa doloremque et ipsam maiores nemo sint, vitae voluptate.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis cumque dicta dolorum eius fuga itaque iusto laborum minus nemo, odit pariatur repudiandae suscipit vero. Ab adipisci facilis fugit non ut?</p>
+          <button on="tap:info.close">Good!</button>
+        </amp-lightbox>
+        <span class="l_c" aria-label="Select a language" tabindex="-1">
+          <span>EN</span>
+          <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-down"></use></svg></i>
+        </span>
+        <div class="l" role="list">
+          <a class="l_i" href="#" role="listitem">RU</a>
+        </div>
       </header>
-      <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+      <amp-sidebar class="s" id="sidebar1" layout="nodisplay" side="left">
         <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
-        <ul class="sidebar">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">About</a></li>
+        <ul class="s_l">
+          <li class="s_i"><a class="s_l" href="#">Home</a></li>
+          <li class="s_i"><a class="s_l" href="#">Products</a></li>
+          <li class="s_i"><a class="s_l" href="#">About</a></li>
         </ul>
       </amp-sidebar>
-      <main></main>
-      <footer></footer>
-    </div>
 
-<!--    <amp-install-serviceworker src="/sw.js"-->
-<!--                               data-iframe-src="install-sw.html"-->
-<!--                               layout="nodisplay">-->
-<!--    </amp-install-serviceworker>-->
-<!--    <amp-analytics type="gtag" data-credentials="include">-->
-<!--      <script type="application/json">-->
-<!--      {-->
-<!--        "vars" : {-->
-<!--          "gtag_id": "UA-XXXXX-Y",-->
-<!--          "config" : {-->
-<!--            "UA-XXXXX-Y": {-->
-<!--              "groups": "default"-->
-<!--            }-->
-<!--          }-->
-<!--        }-->
-<!--      }-->
-<!--      </script>-->
-<!--    </amp-analytics>-->
+      <main>
+        <div class="csl">
+          <amp-csl id="csl" type="slides" width="450" height="300" controls loop autoplay delay="3000">
+            <div class="csl_i">
+              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
+              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <div class="csl_info">
+                <h1 class="csl_title">WOODER</h1>
+                <a class="btn btn--row" href="#">
+                  <span>LEARN MORE</span>
+                  <i class="i i--a"></i>
+                </a>
+              </div>
+            </div>
+            <div class="csl_i">
+              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
+              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <div class="csl_info">
+                <h1 class="csl_title">WOODER</h1>
+                <a class="btn btn--row" href="#">
+                  <span>LEARN MORE</span>
+                  <i class="i i--a"></i>
+                </a>
+              </div>
+            </div>
+            <div class="csl_i">
+              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
+              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <div class="csl_info">
+                <h1 class="csl_title">WOODER</h1>
+                <a class="btn btn--row" href="#">
+                  <span>LEARN MORE</span>
+                  <i class="i i--a"></i>
+                </a>
+              </div>
+            </div>
+            <div class="csl_i">
+              <amp-img src="/dist/img/slide-01-l.jpg" width="450" height="300"></amp-img>
+              <amp-img src="/dist/img/slide-01-r.jpg" width="450" height="300"></amp-img>
+              <div class="csl_info">
+                <h1 class="csl_title">WOODER</h1>
+                <a class="btn btn--row" href="#">
+                  <span>LEARN MORE</span>
+                  <i class="i i--a"></i>
+                </a>
+              </div>
+            </div>
+          </amp-csl>
+          <div class="csl-pv">
+            <button class="csl-pv_i" on="tap:csl.goToSlide(index=0)"><span>01</span></button>
+            <button class="csl-pv_i" on="tap:csl.goToSlide(index=1)"><span>02</span></button>
+            <button class="csl-pv_i" on="tap:csl.goToSlide(index=2)"><span>03</span></button>
+            <button class="csl-pv_i" on="tap:csl.goToSlide(index=3)"><span>04</span></button>
+          </div>
+          <button class="scr" type="button" on="tap:">
+            <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-mouse"></use></svg></i>
+            <i class="i i--a-d"></i>
+            <span>scroll</span>
+          </button>
+        </div>
+        <div class="c">
+          <div class="c-left">
+            <span class="c-d-l">F</span>
+            <h2 class="title">Furniture</h2>
+            <p>Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made of reclaimed barnwood</p>
+            <a href="#">
+              <span>Learn more</span>
+              <i class="i i--a-r"></i>
+            </a>
+            <span class="c-c">01 <span class="t-g">.</span></span>
+          </div>
+          <div class="c-img">
+            <amp-img alt="Furniture preview" src="./dist/img/img-01.jpg" width="900" height="675" layout="responsive"></amp-img>
+            <span class="c-d-t">Furniture</span>
+          </div>
+        </div>
+        <div class="c">
+          <div class="c-img">
+            <amp-img alt="Decor preview" src="./dist/img/img-02.jpg" width="900" height="675" layout="responsive"></amp-img>
+            <span class="c-d-t">Decor</span>
+          </div>
+          <div class="c-right">
+            <span class="c-d-l">D</span>
+            <h2 class="title">Decor</h2>
+            <p>We make all types of wooden decor as per design given by Architect,Interior designer, contractor which is suitable your premises.</p>
+            <a href="#">
+              <span>Learn more</span>
+              <i class="i i--a-r"></i>
+            </a>
+            <span class="c-c">02 <span class="t-g">.</span></span>
+          </div>
+        </div>
+        <div class="c">
+          <div class="c-center">
+            <h2 class="title">wooder – is quality</h2>
+            <p>We create unique design objects made of rare wood, specially under the order. Look at the short video about our work.</p>
+
+            <div class="c-advt">
+              <div class="c-advt_i">
+                <div class="c-advt_pv">
+                  <amp-img alt="Innovative Design" src="./dist/img/video-01.png" width="200" height="200"></amp-img>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
+                    <amp-ima-video id="myVideo3"
+                      width="640"
+                      height="360"
+                      layout="responsive"
+                      data-tag="https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpreonlybumper&cmsid=496&vid=short_onecue&correlator="
+                      data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      data-delay-ad-request="true"
+                      autoplay>
+                    </amp-ima-video>
+                    <button on="tap:advt-1.close">Good!</button>
+                  </amp-lightbox>
+                </div>
+                <p>Innovative Design</p>
+              </div>
+              <div class="c-advt_i">
+                <div class="c-advt_pv">
+                  <amp-img alt="High-level Skills" src="./dist/img/video-02.png" width="200" height="200"></amp-img>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
+                    <amp-ima-video id="myVideo3"
+                      width="640"
+                      height="360"
+                      layout="responsive"
+                      data-tag="https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpreonlybumper&cmsid=496&vid=short_onecue&correlator="
+                      data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      data-delay-ad-request="true"
+                      autoplay>
+                    </amp-ima-video>
+                    <button on="tap:advt-1.close">Good!</button>
+                  </amp-lightbox>
+                </div>
+                <p>High-level Skills</p>
+              </div>
+              <div class="c-advt_i">
+                <div class="c-advt_pv">
+                  <amp-img alt="Quality Products" src="./dist/img/video-03.png" width="200" height="200"></amp-img>
+                  <button class="inf" on="tap:advt-1.open" aria-label="show Innovative Design"><i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-info"></use></svg></i></button>
+                  <amp-lightbox class="mdl" id="advt-1" layout="nodisplay">
+                    <amp-ima-video id="myVideo3"
+                      width="640"
+                      height="360"
+                      layout="responsive"
+                      data-tag="https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpreonlybumper&cmsid=496&vid=short_onecue&correlator="
+                      data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      data-delay-ad-request="true"
+                      autoplay>
+                    </amp-ima-video>
+                    <button on="tap:advt-1.close">Good!</button>
+                  </amp-lightbox>
+                </div>
+                <p>Quality Products</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c c--d">
+          <div class="c-left">
+            <h2 class="title">we Do the design of any complexity</h2>
+            <p>This is a team of professionals that make the furniture and wood décor high standard. Creating modern designs. Adhering to the global quality standards. And we are doing work with love.</p>
+            <a href="#">
+              <i class="i"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-play"></use></svg></i>
+              <span>Watch video</span>
+            </a>
+          </div>
+        </div>
+        <div class="c">
+          <div class="c-img">
+            <amp-img alt="About preview" src="./dist/img/img-02.jpg" width="900" height="675" layout="responsive"></amp-img>
+            <span class="c-d-t">About</span>
+          </div>
+          <div class="c-right">
+            <span class="c-d-l">A</span>
+            <h2 class="title">About</h2>
+            <p>We are a team of professionals in the wood processing and the creation of wooden furniture of the highest class</p>
+            <a href="#">
+              <span>Learn more</span>
+              <i class="i i--a-r"></i>
+            </a>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <span class="t t-d">&copy; 2020 WOODER</span>
+        <span class="l">W<span>OO</span>DER</span>
+        <span class="t t-d">Powered by <a href="https://github.com/Stella-A/" target="_blank" rel="nofollow noopener">Stella</a></span>
+      </footer>
+    </div>
   </body>
 </html>
