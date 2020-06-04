@@ -258,6 +258,53 @@ p {
   flex-wrap: nowrap;
 }
 
+.s {
+  position: relative;
+  width: 100%;
+  padding: calc(var(--offset) * 2);
+  background-image: url(/dist/img/bg-01.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.s-close {
+  position: absolute;
+  top: calc(var(--offset) * 2);
+  right: calc(var(--offset) * 2);
+  font-size: 1.5em;
+  line-height: 1;
+  color: var(--cG);
+}
+
+.s_l {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 calc(var(--offset) * 14);
+  list-style: none;
+}
+
+.s_i {
+  margin-top: calc(var(--offset));
+  margin-bottom: calc(var(--offset));
+}
+
+.s_link {
+  font-weight: 700;
+  font-size: 4em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+
+  &.current {
+    font-size: 8.25em;
+    color: var(--cG);
+  }
+}
+
 .logo {
   font-weight: 700;
   font-size: 2em;
