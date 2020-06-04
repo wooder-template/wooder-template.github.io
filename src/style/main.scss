@@ -106,7 +106,7 @@ button {
   background-color: transparent;
   cursor: pointer;
   border: none;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1em;
   line-height: 1;
   color: inherit;
@@ -125,7 +125,7 @@ p {
 
 .btn {
   font-size: 0.7em;
-  font-weight: 700;
+  font-weight: 800;
 
   &--row {
     display: inline-flex;
@@ -294,7 +294,7 @@ p {
 }
 
 .s_link {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 4em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
@@ -306,7 +306,7 @@ p {
 }
 
 .logo {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 2em;
   letter-spacing: 10px;
 
@@ -336,7 +336,7 @@ p {
 .m_i {
   margin-left: calc(var(--offset) * 3);
   margin-right: calc(var(--offset) * 2);
-  font-weight: 700;
+  font-weight: 800;
 
   &:last-of-type {
     margin-right: 0;
@@ -466,7 +466,7 @@ p {
     transform: translateX(-50%) rotate(90deg);
     display: none;
     font-size: 3em;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--cG);
 
     &::before {
@@ -631,7 +631,7 @@ p {
 
   .title {
     position: relative;
-    font-weight: 700;
+    font-weight: 800;
 
     &::before {
       content: "";
@@ -663,7 +663,7 @@ p {
     top: calc(0px - (var(--offset) * 10));
     right: calc(var(--offset) * 16);
     font-size: 20em;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
     color: #bea67c;
     opacity: 0.07;
@@ -681,7 +681,7 @@ p {
 
   .title {
     position: relative;
-    font-weight: 700;
+    font-weight: 800;
 
     &::before {
       content: "";
@@ -713,7 +713,7 @@ p {
     top: calc(0px - (var(--offset) * 10.5));
     left: calc(var(--offset) * 16);
     font-size: 20em;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
     color: #bea67c;
     opacity: 0.07;
@@ -771,7 +771,7 @@ p {
 .c-c {
   position: absolute;
   bottom: calc(var(--offset) * 5);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.8em;
 }
 
@@ -780,7 +780,7 @@ p {
   top: 50%;
   transform: translateY(-50%);
   font-size: 10em;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   line-height: 1;
   color: #d0d0d0;
